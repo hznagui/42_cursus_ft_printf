@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_put_uns_int.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/12 16:42:30 by hznagui           #+#    #+#             */
-/*   Updated: 2022/11/12 20:23:03 by hznagui          ###   ########.fr       */
+/*   Created: 2022/11/12 20:20:18 by hznagui           #+#    #+#             */
+/*   Updated: 2022/11/12 20:24:32 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
+void ft_put_uns_int(unsigned int n)
+{
+	if (n > 9)
+	{
+		ft_put_uns_int(n / 10);
+		ft_put_uns_int(n % 10);
+	}
+	else
+	{
+		ft_putchar(n + '0');
+	}
 
-#include <unistd.h>
-#include <stdio.h>
-#include <stdarg.h>
-void	ft_putstr(char *s);
-void    ft_putchar(char c);
-int     ft_printf(const char *, ...);
-void    ft_putnbr(int n);
-size_t	ft_strlen(const char *s);
-void ft_put_uns_int(unsigned int n);
-#endif 
+}

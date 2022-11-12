@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 16:36:44 by hznagui           #+#    #+#             */
-/*   Updated: 2022/11/12 17:56:16 by hznagui          ###   ########.fr       */
+/*   Updated: 2022/11/12 20:41:31 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,19 @@ while (string[i])
         ft_putchar(va_arg(y,int));
         i++;
     }
-    else if(string[i] == '%' && string[i + 1] == 'd')
+    else if (string[i] == '%' && string[i + 1] == '%')
+    {
+        ft_putchar('%');
+        i++;
+    }
+    else if(string[i] == '%' && (string[i + 1] == 'd' || string[i + 1] == 'i'))
     {
         ft_putnbr(va_arg(y,int));
+        i++;
+    }
+        else if(string[i] == '%' && string[i + 1] == 'u')
+    {
+        ft_put_uns_int(va_arg(y,int));
         i++;
     }
     else if(string[i] == '%' && string[i + 1] == 's')
@@ -43,5 +53,7 @@ return(ft_strlen(string));
 }
 int main()
 {
-    ft_printf("hello %c",'a');
+    int i =ft_printf("hello %%c %d\n",'a');
+    int y = printf("hello %%c %d\n",'a');
+    printf("%d\n%d",i,y);
 }
