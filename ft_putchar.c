@@ -6,13 +6,14 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 16:38:23 by hznagui           #+#    #+#             */
-/*   Updated: 2022/11/12 17:25:39 by hznagui          ###   ########.fr       */
+/*   Updated: 2022/11/13 23:25:07 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putchar(char c)
+int	ft_putchar(char c)
 {
 	write(1, &c, 1);
+	return(1);
 }

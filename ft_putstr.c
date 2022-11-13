@@ -6,22 +6,23 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 16:38:16 by hznagui           #+#    #+#             */
-/*   Updated: 2022/11/12 17:25:46 by hznagui          ###   ########.fr       */
+/*   Updated: 2022/11/13 23:35:16 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putstr(char *s)
+size_t	ft_putstr(char *s)
 {
 	size_t	i;
 
 	i = 0;
 	if (!s)
-		return ;
+		return (0);
 	while (s[i])
 	{
 		write(1, &s[i], 1);
 		i++;
 	}
+	return(i);
 }
