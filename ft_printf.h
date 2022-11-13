@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 16:42:30 by hznagui           #+#    #+#             */
-/*   Updated: 2022/11/12 20:23:03 by hznagui          ###   ########.fr       */
+/*   Updated: 2022/11/13 23:13:39 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,7 @@ void    ft_putchar(char c);
 int     ft_printf(const char *, ...);
 void    ft_putnbr(int n);
 size_t	ft_strlen(const char *s);
+void ft_heXdecimal(unsigned long long i);
 void ft_put_uns_int(unsigned int n);
+void ft_hexdecimal(unsigned long long i);
 #endif 

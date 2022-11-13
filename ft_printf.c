@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 16:36:44 by hznagui           #+#    #+#             */
-/*   Updated: 2022/11/12 20:41:31 by hznagui          ###   ########.fr       */
+/*   Updated: 2022/11/13 23:13:59 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,15 +45,24 @@ while (string[i])
         ft_putstr(va_arg(y,char *));
         i++;
     }
+    else if(string[i] == '%' && string[i + 1] == 'x')
+    {
+        ft_hexdecimal(va_arg(y,unsigned long long));
+        i++;
+    }
+    else if(string[i] == '%' && string[i + 1] == 'X')
+    {
+        ft_heXdecimal(va_arg(y,unsigned long long));
+        i++;
+    }    else if(string[i] == '%' && string[i + 1] == 'p')
+    {
+        ft_putstr("0x");
+        ft_hexdecimal(va_arg(y,unsigned long long));
+        i++;
+    }
     else
         ft_putchar(string[i]);
     i++;
 }
 return(ft_strlen(string));
-}
-int main()
-{
-    int i =ft_printf("hello %%c %d\n",'a');
-    int y = printf("hello %%c %d\n",'a');
-    printf("%d\n%d",i,y);
 }

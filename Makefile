@@ -6,11 +6,11 @@
 #    By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/12 16:41:54 by hznagui           #+#    #+#              #
-#    Updated: 2022/11/12 20:23:21 by hznagui          ###   ########.fr        #
+#    Updated: 2022/11/13 21:23:21 by hznagui          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-MAN_FILE = ft_putstr.c 	ft_putnbr.c ft_printf.c ft_putchar.c ft_strlen.c ft_put_uns_int.c\
+MAN_FILE = ft_putstr.c 	ft_putnbr.c ft_printf.c ft_putchar.c ft_strlen.c ft_put_uns_int.c ft_hexdecimal.c ft_heXadecimal.c\
 
 NAME = libftprintf.a
 
