@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 16:36:44 by hznagui           #+#    #+#             */
-/*   Updated: 2022/11/14 20:06:35 by hznagui          ###   ########.fr       */
+/*   Updated: 2022/11/14 20:41:49 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,8 @@ int	ft_printf(const char *string, ...)
 		}
 		else
 			o += ft_putchar(string[i]);
-		i++;
+		if (string[i] != '\0')
+			i++;
 	}
 	return (o);
 }
