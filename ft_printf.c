@@ -6,11 +6,13 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 16:36:44 by hznagui           #+#    #+#             */
-/*   Updated: 2022/11/14 17:10:05 by hznagui          ###   ########.fr       */
+/*   Updated: 2022/11/14 18:41:13 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+
 
 static int ft_check(char string,va_list h)
 {
@@ -27,13 +29,13 @@ static int ft_check(char string,va_list h)
     else if(string == 's')
         y += ft_putstr(va_arg(h,char *));
     else if(string == 'x')
-        y += ft_hexdecimal(va_arg(h,unsigned long long));
+        y += ft_hexdecimal(va_arg(h,unsigned int));
     else if(string == 'X')
-        y += ft_heXdecimal(va_arg(h,unsigned long long));
+        y += ft_heXadecimal(va_arg(h,unsigned int));
     else if(string == 'p')
     {
         y += ft_putstr("0x");
-        y += ft_hexdecimal(va_arg(h,unsigned long long));
+        y += ft_ptr(va_arg(h,unsigned long));
         
     }
     return(y);
@@ -60,10 +62,11 @@ while (string[i])
 }
 return(o);
 }
-// #include <limits.h>
-// int main()
-// {
-// int y = ft_printf(" %x \n", LONG_MAX);
-// int z = printf(" %x \n", LONG_MAX);
-// printf("%d\n%d",y,z);
-// }
+/* #include <limits.h>
+int main()
+{
+int y = printf("%X\n", -1);
+int z = ft_printf("%X\n", -1);
+printf("%d\n%d",y,z);
+}//1111 1111 1111 1111 1111 1111 1111 1111 1111 1111 1111 1111 1111 1111 1111 1111
+//1111 1111 1111 1111 1111 1111 1111 1111 1111 1111 */

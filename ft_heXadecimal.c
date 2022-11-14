@@ -6,16 +6,16 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 19:41:39 by hznagui           #+#    #+#             */
-/*   Updated: 2022/11/14 17:09:00 by hznagui          ###   ########.fr       */
+/*   Updated: 2022/11/14 18:41:00 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
 
-unsigned long long ft_heXdecimal(unsigned long long i)
+unsigned int ft_heXadecimal(unsigned int i)
 {
-    unsigned long long p;
+    unsigned int p;
     p=0;
     if (i < 0)
         p += 1;
@@ -35,8 +35,8 @@ unsigned long long ft_heXdecimal(unsigned long long i)
         p += ft_putchar('F'); 
     else if (i >= 15)
     {
-        p += ft_hexdecimal(i / 16);
-        p += ft_hexdecimal(i % 16);
+        p += ft_heXadecimal(i / 16);
+        p += ft_heXadecimal(i % 16);
     }
     return(p);
 }

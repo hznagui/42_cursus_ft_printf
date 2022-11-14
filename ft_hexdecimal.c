@@ -6,15 +6,15 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 18:48:39 by hznagui           #+#    #+#             */
-/*   Updated: 2022/11/14 17:08:54 by hznagui          ###   ########.fr       */
+/*   Updated: 2022/11/14 18:27:55 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-unsigned long long ft_hexdecimal(unsigned long long i)
+unsigned int ft_hexdecimal(unsigned int i)
 {
-    unsigned long long p;
+    unsigned int p;
     p=0;
     if (i < 0)
         p += 1;
