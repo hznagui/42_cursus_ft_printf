@@ -6,13 +6,13 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 19:41:39 by hznagui           #+#    #+#             */
-/*   Updated: 2022/11/14 18:52:45 by hznagui          ###   ########.fr       */
+/*   Updated: 2022/11/14 20:06:18 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-unsigned int	ft_heXadecimal(unsigned int i)
+unsigned int	ft_hexadecimal(unsigned int i)
 {
 	unsigned int	p;
 
@@ -35,8 +35,8 @@ unsigned int	ft_heXadecimal(unsigned int i)
 		p += ft_putchar('F');
 	else if (i >= 15)
 	{
-		p += ft_heXadecimal(i / 16);
-		p += ft_heXadecimal(i % 16);
+		p += ft_hexadecimal(i / 16);
+		p += ft_hexadecimal(i % 16);
 	}
 	return (p);
 }

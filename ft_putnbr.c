@@ -6,27 +6,29 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 16:38:20 by hznagui           #+#    #+#             */
-/*   Updated: 2022/11/14 14:28:58 by hznagui          ###   ########.fr       */
+/*   Updated: 2022/11/14 19:40:57 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int ft_return(int n)
+static int	ft_return(int n)
 {
-	int y;
+	int	y;
+
 	y = 0;
 	if (n == 0)
-		return(1);
-	else if(n < 0)
+		return (1);
+	else if (n < 0)
 		y += 1;
-	while(n != 0)
+	while (n != 0)
 	{
 		n /= 10;
-		y++;	
+		y++;
 	}
-	return(y);
+	return (y);
 }
+
 int	ft_putnbr(int n)
 {
 	if (n == -2147483648)
@@ -49,5 +51,5 @@ int	ft_putnbr(int n)
 	{
 		ft_putchar(n + '0');
 	}
-	return(ft_return(n));
+	return (ft_return(n));
 }
