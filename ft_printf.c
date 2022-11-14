@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 16:36:44 by hznagui           #+#    #+#             */
-/*   Updated: 2022/11/13 23:38:16 by hznagui          ###   ########.fr       */
+/*   Updated: 2022/11/14 17:10:05 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,16 @@ static int ft_check(char string,va_list h)
     {
         y += ft_putstr("0x");
         y += ft_hexdecimal(va_arg(h,unsigned long long));
+        
     }
-    return(0);
+    return(y);
 }
 int ft_printf(const char *string, ...)
 {
     va_list y;
     size_t i;
+    int o;
+    o = 0;
     i=0;
     va_start(y,string);
 
@@ -48,18 +51,19 @@ while (string[i])
 {
     if (string[i] == '%')
     {
-        ft_check(string[i+1],y);
+        o += ft_check(string[i+1],y);
         i++;
     }
     else
-        ft_putchar(string[i]);
+        o += ft_putchar(string[i]);
     i++;
 }
-return(0);
+return(o);
 }
-int main()
-{
-    int y =5564965;
-    printf("%d\n",y);
-    ft_printf("%d",y);
-}
+// #include <limits.h>
+// int main()
+// {
+// int y = ft_printf(" %x \n", LONG_MAX);
+// int z = printf(" %x \n", LONG_MAX);
+// printf("%d\n%d",y,z);
+// }

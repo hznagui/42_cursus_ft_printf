@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 16:38:20 by hznagui           #+#    #+#             */
-/*   Updated: 2022/11/13 23:34:23 by hznagui          ###   ########.fr       */
+/*   Updated: 2022/11/14 14:28:58 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ static int ft_return(int n)
 	y = 0;
 	if (n == 0)
 		return(1);
+	else if(n < 0)
+		y += 1;
 	while(n != 0)
 	{
 		n /= 10;
