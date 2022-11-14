@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 19:41:39 by hznagui           #+#    #+#             */
-/*   Updated: 2022/11/14 20:06:18 by hznagui          ###   ########.fr       */
+/*   Updated: 2022/11/14 20:10:54 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,7 @@ unsigned int	ft_hexadecimal(unsigned int i)
 	unsigned int	p;
 
 	p = 0;
-	if (i < 0)
-		p += 1;
-	else if (i <= 9)
+	if (i <= 9)
 		p += ft_putchar(i + '0');
 	else if (i == 10)
 		p += ft_putchar('A');
