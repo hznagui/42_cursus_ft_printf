@@ -6,7 +6,7 @@
 /*   By: hznagui <hznagui@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 16:36:44 by hznagui           #+#    #+#             */
-/*   Updated: 2022/11/14 20:41:49 by hznagui          ###   ########.fr       */
+/*   Updated: 2022/11/15 13:40:29 by hznagui          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,18 +47,20 @@ int	ft_printf(const char *string, ...)
 
 	o = 0;
 	i = 0;
+	if (write(1, 0, 0) == -1)
+		return (-1);
 	va_start(y, string);
 	while (string[i])
 	{
 		if (string[i] == '%')
 		{
 			o += ft_check(string[i + 1], y);
-			i++;
+			if (ft_check(string[i + 1], y))
+				i++;
 		}
 		else
 			o += ft_putchar(string[i]);
-		if (string[i] != '\0')
-			i++;
+		i++;
 	}
 	return (o);
 }
